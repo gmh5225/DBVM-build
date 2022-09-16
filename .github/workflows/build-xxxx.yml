@@ -1,4 +1,4 @@
-name: DBVMBuild
+name: DBVMBuild-XXXX
 
 on:
   workflow_dispatch:
