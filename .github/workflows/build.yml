@@ -1,0 +1,24 @@
+name: DBVMBuild
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: cheat-engine/cheat-engine
+          ref: XXXX2
+          
+      - run: sudo apt-get install -y yasm nasm mkisofs rar
+
+      - run: cd dbvm && make release
+
+      - uses: actions/upload-artifact@main
+        with:
+          name: vmdisk
+          path: dbvm/release/vmdisk.img
+          retention-days: 5
