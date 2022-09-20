@@ -1,2 +1,2 @@
 # DBVM-build
-DBVM-build
+Automatic building of DBVM
